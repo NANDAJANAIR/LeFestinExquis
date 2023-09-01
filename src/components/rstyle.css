@@ -1,0 +1,10 @@
+.bg1{
+    background-image: url("../assets/pexels-ella-olsson-1640772.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+    font-weight: bolder;
+    background-color: #332d2d;
+background-blend-mode: multiply;
+}
