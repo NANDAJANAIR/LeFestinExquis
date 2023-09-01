@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
 import Card from "../components/Card";
 import axios from "axios";
+import 'dotenv/config'
 import {
   MDBCard,
   MDBCardImage,
@@ -22,7 +23,7 @@ const Home = () => {
 
   const fetched_data = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/showallproducts");
+      const res = await axios.get(process.env.SERVER);
       console.log(res.data.data);
       setproducts(res.data.data);
     } catch (err) {
