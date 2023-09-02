@@ -3,33 +3,38 @@ import { useRef } from 'react'
 import './login.css'
 import pizzapull1 from '../assets/pizzapull1.jpg'
 import axios from 'axios'
+import { Navigate, redirect, useNavigate } from 'react-router-dom'
+
 
 
 
 const Login = () => {
 
+
+  const navigate = useNavigate()
   
   const email = useRef("")
   const password = useRef("")
 
 
   const handleSubmit= async () =>{
-console.log(email.current.value)
-console.log(password.current.value)
 
  try{
-const res = await axios.post("http://localhost:5000/api/loginuser",
-{
-email:email.current.value,  
-password:password.current.value,   
-})
+const res = await axios.post("http://localhost:5000/api/loginuser",{email:email.current.value,password:password.current.value,})
  console.log(res)
+ if(res.data==="success"){
+  navigate("/")
+ }
+ else{
+  alert('wrong credentials');
+ }
 
  }
  catch(err)
  {
   console.log(err)
- }
+  alert('Try Logging In With Correct Credentials');
+   }
 
   }
 
@@ -63,7 +68,7 @@ password:password.current.value,
                     className="fw-normal mb-3 pb-3"
                     style={{ letterSpacing: 1 }}
                   >
-                    Sign into your account
+                    Login to your account
                   </h5>
                   <div className="form-outline mb-4">
                     <input

@@ -1,48 +1,18 @@
 import React, { useRef } from 'react'
 import biryani from "../assets/biryani.jpg"
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const  Signup =  () => {
-
+ const navigate = useNavigate()
   const name = useRef("")
   const email = useRef("")
   const password = useRef("")
   const location = useRef("")
 
   const handleSubmit= async () =>{
-console.log(name.current.value)
-console.log(email.current.value)
-console.log(password.current.value)
-console.log(location.current.value)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  try{
 const res = await axios.post("http://localhost:5000/api/createuser",
 {
@@ -52,7 +22,8 @@ password:password.current.value,
 location:location.current.value,  
 })
  console.log(res)
-
+ if(res.data==="success"){
+  navigate("/login")}
  }
  catch(err)
  {
