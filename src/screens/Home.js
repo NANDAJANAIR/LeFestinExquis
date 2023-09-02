@@ -33,22 +33,7 @@ const Home = () => {
     fetched_data();
   }, []);
 
-  const [cart, setCart] = useState([]);
-  const addToCart = (i) => {
-    // setproducts(state =>
-    //   state.map((item, p) => {
-    //     if (i === p) {
-    //       setCart([...cart,
-    //         { name: item.name, price: item.price, quantity: item.quantity }
-    //       ]);
-    //       return { ...item, inCart: true };
-    //     }
-    //     console.log(item);
-    //     return  item;
-    //   })
-    // );
-    console.log(i)
-  };
+ 
 
   return (
     <div>

@@ -27,7 +27,7 @@ export default function App() {
       <MDBCarouselItem
         className='w-100 d-block'
         itemId={2}
-        src='https://source.unsplash.com/random/900×700/?momos'
+        src='https://source.unsplash.com/random/900×700/?biryani'
         alt='...' style={{filter:"brightness(70%)"}}
       >
        
